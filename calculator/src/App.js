@@ -3,6 +3,10 @@ import './App.css';
 
 export default function App() {
   const [result, setResult] = useState("");
+
+  const handleClick = (e) => {
+    setResult(result.concat(e.target.name));
+  }
   return (
     <>
       <div className="container">
@@ -10,24 +14,24 @@ export default function App() {
           <input type="text" value={result} />
         </form>
         <div className="keypad">
-          <button>Clear</button>
-          <button>C</button>
-          <button>&divide;</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>&times;</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>&ndash;</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>+</button>
-          <button>0</button>
-          <button>.</button>
-          <button>=</button>
+          <button onClick={handleClick}>Clear</button>
+          <button onClick={handleClick}>C</button>
+          <button name="" onClick={handleClick}>&divide;</button>
+          <button name="" onClick={handleClick}>7</button>
+          <button name="" onClick={handleClick}>8</button>
+          <button name="" onClick={handleClick}>9</button>
+          <button name="" onClick={handleClick}>&times;</button>
+          <button name="" onClick={handleClick}>4</button>
+          <button name="" onClick={handleClick}>5</button>
+          <button name="" onClick={handleClick}>6</button>
+          <button name="" onClick={handleClick}>&ndash;</button>
+          <button name="" onClick={handleClick}>1</button>
+          <button name="" onClick={handleClick}>2</button>
+          <button name="" onClick={handleClick}>3</button>
+          <button name="" onClick={handleClick}>+</button>
+          <button name="" onClick={handleClick}>0</button>
+          <button name="" onClick={handleClick}>.</button>
+          <button onClick={handleClick}>=</button>
         </div>
       </div>
     </>
