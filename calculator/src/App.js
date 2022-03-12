@@ -11,11 +11,11 @@ export default function App() {
     setResult("");
   }
   const backspace = () => {
-    setResult(result.slice(0, result.length -1));
+    setResult(result.slice(0, -1));
   }
   const calculate = () => {
     try {
-      setResult(eval(result).toString);
+      setResult(eval(result));
     } catch(err) {
       setResult("Error")
     }
@@ -24,7 +24,9 @@ export default function App() {
     <>
       <div className="container">
         <form>
-          <input type="text" value={result} />
+          <input type="text" value={result} onChange={
+                            (e) => setResult(result.concat(e.target.name))
+                        }/>
         </form>
         <div className="keypad">
           <button className="highlight" onClick={clear} id="clear">Clear</button>
@@ -44,7 +46,7 @@ export default function App() {
           <button className="highlight" name="+" onClick={handleClick}>+</button>
           <button name="0" onClick={handleClick}>0</button>
           <button name="." onClick={handleClick}>.</button>
-          <button  className="highlight" onClick={calculate} id="result">=</button>
+          <button className="highlight" onClick={calculate} id="result">=</button>
         </div>
       </div>
     </>
