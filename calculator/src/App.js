@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function App() {
+  const [result, setResult] = useState("");
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <>
+      <div className="container">
+        <form>
+          <input type="text" value={result} />
+        </form>
+      </div>
+    </>
   )
 }
